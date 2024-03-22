@@ -1,6 +1,5 @@
 package daniel.brian.news_app.presentation.onboarding.components
 
-import android.content.res.Configuration
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -19,8 +18,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import daniel.brian.news_app.R
-import daniel.brian.news_app.presentation.Dimens.mediumPadding1
-import daniel.brian.news_app.presentation.Dimens.mediumPadding2
+import daniel.brian.news_app.presentation.util.Dimens.mediumPadding1
+import daniel.brian.news_app.presentation.util.Dimens.mediumPadding2
 import daniel.brian.news_app.presentation.onboarding.Page
 import daniel.brian.news_app.presentation.onboarding.pages
 import daniel.brian.news_app.ui.theme.NewsAppTheme

@@ -1,4 +1,4 @@
-package daniel.brian.news_app.presentation
+package daniel.brian.news_app.presentation.util
 
 import androidx.compose.ui.unit.dp
 
