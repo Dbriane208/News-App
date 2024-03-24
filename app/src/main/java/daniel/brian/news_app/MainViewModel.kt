@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import daniel.brian.news_app.domain.usecases.AppEntryUseCases
+import daniel.brian.news_app.domain.usecases.app_entry.AppEntryUseCases
 import daniel.brian.news_app.presentation.nvgraph.Route
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn

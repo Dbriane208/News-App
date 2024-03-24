@@ -1,4 +1,4 @@
-package daniel.brian.news_app.domain.usecases
+package daniel.brian.news_app.domain.usecases.app_entry
 
 import daniel.brian.news_app.domain.manager.LocalUserManager
 
