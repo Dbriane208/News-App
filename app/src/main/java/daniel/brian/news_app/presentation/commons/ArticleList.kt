@@ -11,9 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import daniel.brian.news_app.domain.model.Article
-import daniel.brian.news_app.presentation.util.Dimens
 import daniel.brian.news_app.presentation.util.Dimens.ExtraSmallPadding2
-import daniel.brian.news_app.presentation.util.Dimens.mediumPadding1
+import daniel.brian.news_app.presentation.util.Dimens.MediumPadding1
 
 @Composable
 // responsible for showing the list of articles we get from paging 3
@@ -23,15 +22,16 @@ fun ArticleList(
     onClick: (Article) -> Unit // send the clicked article
 ) {
     val handlePagingResult = handlePagingResult(articles = articles)
+
     if (handlePagingResult){
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(mediumPadding1),
+            verticalArrangement = Arrangement.spacedBy(MediumPadding1),
             contentPadding = PaddingValues(all = ExtraSmallPadding2)
         ) {
             items(count = articles.itemCount){
-                articles[it]?.let {
-                    ArticleCard(article = it, onClick = {onClick(it)})
+                articles[it]?.let {article ->
+                    ArticleCard(article = article, onClick = {onClick(article)})
                 }
             }
         }
@@ -61,7 +61,7 @@ fun handlePagingResult(
         // if error is not loading and we have null then we know there is an error
         error != null ->{
             // here we will show an empty screen
-            EmptyScreen()
+            EmptyScreen(error = error)
             false
         }
         else -> {
@@ -72,11 +72,11 @@ fun handlePagingResult(
 
 @Composable
 private fun ShimmerEffect() {
-    Column(verticalArrangement = Arrangement.spacedBy(mediumPadding1)) {
+    Column(verticalArrangement = Arrangement.spacedBy(MediumPadding1)) {
         // taking 10 articles
         repeat(10){
             ArticleCardShimmerEffect(
-                modifier = Modifier.padding(horizontal = mediumPadding1)
+                modifier = Modifier.padding(horizontal = MediumPadding1)
             )
         }
     }

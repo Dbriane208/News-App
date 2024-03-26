@@ -22,8 +22,8 @@ import daniel.brian.news_app.presentation.commons.NewsButton
 import daniel.brian.news_app.presentation.commons.NewsTextButton
 import daniel.brian.news_app.presentation.onboarding.components.OnboardingPage
 import daniel.brian.news_app.presentation.onboarding.components.PageIndicator
-import daniel.brian.news_app.presentation.util.Dimens.mediumPadding2
-import daniel.brian.news_app.presentation.util.Dimens.pageIndicatorSize
+import daniel.brian.news_app.presentation.util.Dimens.MediumPadding2
+import daniel.brian.news_app.presentation.util.Dimens.PageIndicatorSize
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -54,13 +54,13 @@ fun OnboardingScreen(
 
         Row (modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = mediumPadding2)
+            .padding(horizontal = MediumPadding2)
             .navigationBarsPadding(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ){
            PageIndicator(
-               modifier = Modifier.width(pageIndicatorSize),
+               modifier = Modifier.width(PageIndicatorSize),
                pageSize = pages.size,
                selectedPage = pagerState.currentPage
            )

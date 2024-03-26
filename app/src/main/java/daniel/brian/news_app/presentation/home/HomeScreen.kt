@@ -27,7 +27,7 @@ import daniel.brian.news_app.domain.model.Article
 import daniel.brian.news_app.presentation.commons.ArticleList
 import daniel.brian.news_app.presentation.commons.SearchBar
 import daniel.brian.news_app.presentation.nvgraph.Route
-import daniel.brian.news_app.presentation.util.Dimens.mediumPadding1
+import daniel.brian.news_app.presentation.util.Dimens.MediumPadding1
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -53,7 +53,7 @@ fun HomeScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = mediumPadding1)
+            .padding(top = MediumPadding1)
             .statusBarsPadding()
     ) {
         Image(
@@ -62,10 +62,10 @@ fun HomeScreen(
             modifier = Modifier
                 .width(150.dp)
                 .height(30.dp)
-                .padding(horizontal = mediumPadding1)
+                .padding(horizontal = MediumPadding1)
         )
 
-        Spacer(modifier = Modifier.height(mediumPadding1))
+        Spacer(modifier = Modifier.height(MediumPadding1))
         
         SearchBar(
             text = "",
@@ -77,18 +77,19 @@ fun HomeScreen(
             onSearch = {}
         ) 
         
-        Spacer(modifier = Modifier.height(mediumPadding1))
+        Spacer(modifier = Modifier.height(MediumPadding1))
 
         Text(text = titles, modifier = Modifier
             .fillMaxWidth()
-            .padding(start = mediumPadding1)
+            .padding(start = MediumPadding1)
             .basicMarquee(),
             fontSize = 12.sp,
             color = colorResource(id = R.color.placeholder)
             )
 
-        Spacer(modifier = Modifier.height(mediumPadding1))
-        ArticleList(modifier = Modifier.padding(horizontal = mediumPadding1), articles = articles, onClick = {
+        Spacer(modifier = Modifier.height(MediumPadding1))
+
+        ArticleList(modifier = Modifier.padding(horizontal = MediumPadding1), articles = articles, onClick = {
             navigate(Route.DetailsScreen.route)
         })
     }

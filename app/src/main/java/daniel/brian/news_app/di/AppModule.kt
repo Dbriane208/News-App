@@ -15,6 +15,7 @@ import daniel.brian.news_app.domain.usecases.app_entry.ReadAppEntry
 import daniel.brian.news_app.domain.usecases.app_entry.SaveAppEntry
 import daniel.brian.news_app.domain.usecases.news.GetNews
 import daniel.brian.news_app.domain.usecases.news.NewsUseCases
+import daniel.brian.news_app.domain.usecases.news.SearchNews
 import daniel.brian.news_app.presentation.util.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -60,7 +61,8 @@ object AppModule {
         newsRepository: NewsRepository
     ): NewsUseCases{
         return NewsUseCases(
-            getNews = GetNews(newsRepository)
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
         )
     }
 }
