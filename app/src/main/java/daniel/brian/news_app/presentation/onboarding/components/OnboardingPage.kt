@@ -18,8 +18,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import daniel.brian.news_app.R
-import daniel.brian.news_app.presentation.util.Dimens.mediumPadding1
-import daniel.brian.news_app.presentation.util.Dimens.mediumPadding2
+import daniel.brian.news_app.presentation.util.Dimens.MediumPadding1
+import daniel.brian.news_app.presentation.util.Dimens.MediumPadding2
 import daniel.brian.news_app.presentation.onboarding.Page
 import daniel.brian.news_app.presentation.onboarding.pages
 import daniel.brian.news_app.ui.theme.NewsAppTheme
@@ -36,18 +36,18 @@ fun OnboardingPage(
             painter = painterResource(id = page.image), contentDescription = null,
             contentScale = ContentScale.Crop
             )
-        Spacer(modifier = Modifier.height(mediumPadding1))
+        Spacer(modifier = Modifier.height(MediumPadding1))
 
         Text(
             text = page.title,
-            modifier = Modifier.padding(horizontal = mediumPadding2),
+            modifier = Modifier.padding(horizontal = MediumPadding2),
             style = MaterialTheme.typography.displaySmall.copy(fontWeight = FontWeight.Bold),
             color = colorResource(id = R.color.display_small)
         )
 
         Text(
             text = page.description,
-            modifier = Modifier.padding(horizontal = mediumPadding2),
+            modifier = Modifier.padding(horizontal = MediumPadding2),
             style = MaterialTheme.typography.bodyMedium,
             color = colorResource(id = R.color.text_medium)
         )

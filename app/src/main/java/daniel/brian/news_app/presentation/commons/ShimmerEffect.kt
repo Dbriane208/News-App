@@ -27,7 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import daniel.brian.news_app.R
 import daniel.brian.news_app.presentation.util.Dimens
-import daniel.brian.news_app.presentation.util.Dimens.mediumPadding1
+import daniel.brian.news_app.presentation.util.Dimens.MediumPadding1
 import daniel.brian.news_app.ui.theme.NewsAppTheme
 
 @SuppressLint("ModifierFactoryUnreferencedReceiver")
@@ -69,7 +69,7 @@ fun ArticleCardShimmerEffect(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(30.dp)
-                    .padding(horizontal = mediumPadding1)
+                    .padding(horizontal = MediumPadding1)
                     .shimmerEffect()
             )
 
@@ -78,7 +78,7 @@ fun ArticleCardShimmerEffect(
                     modifier = Modifier
                         .fillMaxWidth(0.5f)
                         .height(15.dp)
-                        .padding(horizontal = mediumPadding1)
+                        .padding(horizontal = MediumPadding1)
                         .shimmerEffect()
                 )
             }

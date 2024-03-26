@@ -1,6 +1,5 @@
 package daniel.brian.news_app.presentation.commons
 
-import android.content.res.Configuration
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.border
 import androidx.compose.foundation.interaction.MutableInteractionSource
