@@ -17,9 +17,12 @@ import daniel.brian.news_app.domain.repository.NewsRepository
 import daniel.brian.news_app.domain.usecases.app_entry.AppEntryUseCases
 import daniel.brian.news_app.domain.usecases.app_entry.ReadAppEntry
 import daniel.brian.news_app.domain.usecases.app_entry.SaveAppEntry
+import daniel.brian.news_app.domain.usecases.news.DeleteArticle
 import daniel.brian.news_app.domain.usecases.news.GetNews
 import daniel.brian.news_app.domain.usecases.news.NewsUseCases
 import daniel.brian.news_app.domain.usecases.news.SearchNews
+import daniel.brian.news_app.domain.usecases.news.SelectArticle
+import daniel.brian.news_app.domain.usecases.news.UpsertArticle
 import daniel.brian.news_app.presentation.util.Constants.BASE_URL
 import daniel.brian.news_app.presentation.util.Constants.NEWS_DATABASE
 import retrofit2.Retrofit
@@ -63,11 +66,15 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsUseCases(
-        newsRepository: NewsRepository
+        newsRepository: NewsRepository,
+        newsDao: NewsDao
     ): NewsUseCases{
         return NewsUseCases(
             getNews = GetNews(newsRepository),
-            searchNews = SearchNews(newsRepository)
+            searchNews = SearchNews(newsRepository),
+            upsertArticle = UpsertArticle(newsDao),
+            deleteArticle = DeleteArticle(newsDao),
+            selectArticle = SelectArticle(newsDao)
         )
     }
 
