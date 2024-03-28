@@ -17,4 +17,8 @@ interface NewsDao {
 
     @Query("SELECT * FROM Article")
     fun getArticles(): Flow<List<Article>>
+
+    // getting an article with its primary key which is url
+    @Query("SELECT * FROM Article WHERE url =:url")
+    suspend fun getArticleById(url: String): Article?
 }

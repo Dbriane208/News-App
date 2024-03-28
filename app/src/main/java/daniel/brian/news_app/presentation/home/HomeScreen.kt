@@ -33,7 +33,8 @@ import daniel.brian.news_app.presentation.util.Dimens.MediumPadding1
 @Composable
 fun HomeScreen(
     articles: LazyPagingItems<Article>,
-    navigate: (String) -> Unit
+    navigateToSearch: () -> Unit,
+    navigateToDetails: (Article) -> Unit
 ) {
     val titles by remember {
         // using derivedStateOf because we're depending on another composable
@@ -72,7 +73,7 @@ fun HomeScreen(
             readOnly = true,
             onValueChange = {},
             onClick = {
-                navigate(Route.SearchScreen.route)
+                navigateToSearch()
             },
             onSearch = {}
         ) 
@@ -89,8 +90,8 @@ fun HomeScreen(
 
         Spacer(modifier = Modifier.height(MediumPadding1))
 
-        ArticleList(modifier = Modifier.padding(horizontal = MediumPadding1), articles = articles, onClick = {
-            navigate(Route.DetailsScreen.route)
+        ArticleList(modifier = Modifier.padding(horizontal = MediumPadding1), articles = articles, onClick = {article ->
+            navigateToDetails(article)
         })
     }
 }

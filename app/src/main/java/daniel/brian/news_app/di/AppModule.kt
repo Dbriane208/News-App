@@ -21,7 +21,8 @@ import daniel.brian.news_app.domain.usecases.news.DeleteArticle
 import daniel.brian.news_app.domain.usecases.news.GetNews
 import daniel.brian.news_app.domain.usecases.news.NewsUseCases
 import daniel.brian.news_app.domain.usecases.news.SearchNews
-import daniel.brian.news_app.domain.usecases.news.SelectArticle
+import daniel.brian.news_app.domain.usecases.news.SelectArticles
+import daniel.brian.news_app.domain.usecases.news.SelectArticleById
 import daniel.brian.news_app.domain.usecases.news.UpsertArticle
 import daniel.brian.news_app.presentation.util.Constants.BASE_URL
 import daniel.brian.news_app.presentation.util.Constants.NEWS_DATABASE
@@ -60,21 +61,22 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsRepository(
-        newsApi: NewsApi
-    ):NewsRepository = NewsRepositoryImpl(newsApi = newsApi)
+        newsApi: NewsApi,
+        newsDao: NewsDao
+    ):NewsRepository = NewsRepositoryImpl(newsApi = newsApi, newsDao = newsDao)
 
     @Provides
     @Singleton
     fun provideNewsUseCases(
         newsRepository: NewsRepository,
-        newsDao: NewsDao
     ): NewsUseCases{
         return NewsUseCases(
             getNews = GetNews(newsRepository),
             searchNews = SearchNews(newsRepository),
-            upsertArticle = UpsertArticle(newsDao),
-            deleteArticle = DeleteArticle(newsDao),
-            selectArticle = SelectArticle(newsDao)
+            upsertArticle = UpsertArticle(newsRepository),
+            deleteArticle = DeleteArticle(newsRepository),
+            selectArticles = SelectArticles(newsRepository),
+            selectArticleById = SelectArticleById(newsRepository)
         )
     }
 
