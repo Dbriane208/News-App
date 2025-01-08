@@ -65,6 +65,5 @@ fun NewsApp(
 @Composable
 fun GreetingPreview() {
     NewsAppTheme {
-
     }
 }
