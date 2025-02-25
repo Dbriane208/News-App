@@ -1,4 +1,4 @@
-# Kaar! 🍴🍲🍹🍸
+# Kaar! 
 A modern android application built using Jetpack Compose to offer news and related articles using the [News API](https://newsapi.org/v2/).
 
 # Features
